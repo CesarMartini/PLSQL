@@ -24,3 +24,28 @@ declare
 begin
 	DBMS_OUTPUT.put_line('Diff between 6 and 4 '|| f_getDiff_Nr(6,4));
 end;
+
+-- two declaration with the same name
+declare
+  function f_getArea_Nr( i_rad_nr IN NUMBER, i_prec_nr IN NUMBER )
+    return NUMBER is
+    v_pi_nr NUMBER := 3.14;
+    begin
+      return trunc(v_pi_nr * (i_rad_nr**2), i_prec_nr );
+    end;
+
+  function f_getArea_Nr( i_rad_nr IN NUMBER, i_ignore_yn IN VARCHAR2 )
+    return NUMBER is
+    v_pi_nr NUMBER := 3.14;
+    begin
+      if i_ignore_yn='Y' and i_rad_nr < 5 then
+        return 0;
+      else
+        return v_pi_nr * (i_rad_nr**2);
+      end if;
+    end;
+
+begin
+  DBMS_OUTPUT.put_line('Area (r=3): ' || f_getArea_Nr(3,1));
+  DBMS_OUTPUT.put_line('Area (r=3): ' || f_getArea_Nr(3,'N'));
+end;
