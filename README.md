@@ -9,5 +9,6 @@ A lab to learn and practice about Oracle PL/SQL
  - triggers;
  - procedures;
  - transactions and anonymous transactions;
+ - exceptions;
 
  by pingdiff.com
