@@ -8,9 +8,13 @@ A lab to learn and practice about Oracle PL/SQL
  - function;
  - trigger;
  - procedure;
- - transaction and anonymous transaction;
+ - transaction and autonomous_transaction;
  - exception;
  - cursor;
  - Record Type.
+ - sys_refcursor;
+ - bulk collect;
+ - package;
 
+ 
  by pingdiff.com
